@@ -1,0 +1,7 @@
+mosquitto:
+  container_name: mosquitto
+  image: eclipse-mosquitto:1.6.13
+  restart: always
+  ports:
+    - "1883:1883"
+    - "9001:9001"
