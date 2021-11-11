@@ -13,7 +13,7 @@ COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
 RUN apk update && apk add bash
 
-ARG buildtime_variable=$PORT
+ARG buildtime_variable=1883
 
 ENV $PORT=$buildtime_variable
 
