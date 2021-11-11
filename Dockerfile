@@ -8,7 +8,9 @@ COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
 #CMD echo listener $PORT >> /mosquitto/config/mosquitto.conf
 
-RUN echo listener -e $PORT >> /mosquitto/config/mosquitto.conf
+ENV PORT=$PORT
+
+RUN echo listener PORT >> /mosquitto/config/mosquitto.conf
 
 #CMD echo listener $PORT
 #COPY mosquitto.conf /mosquitto/config/mosquitto.conf 
