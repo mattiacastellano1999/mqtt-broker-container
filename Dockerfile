@@ -1,4 +1,4 @@
 FROM eclipse-mosquitto:1.6.13
-EXPOSE 1883
-EXPOSE 9001
+ARG PORTA=$PORT
 COPY mosquitto.conf /mosquitto/config/mosquitto.conf 
+RUN echo "listener="PORTA >> mosquitto.conf
