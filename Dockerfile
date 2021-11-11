@@ -4,7 +4,7 @@ COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
 #CMD ["echo", "listener $PORT", ">>", "/mosquitto/config/mosquitto.conf"]
 
-ENTRYPOINT [ "sh", "-c", "echo $PORT" ]
+ENTRYPOINT [ "echo", "listener $PORT", ">>", "/mosquitto/config/mosquitto.conf"]
 
 #CMD echo echo "listener $PORT" >> /mosquitto/config/mosquitto.conf
 
