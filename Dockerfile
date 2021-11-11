@@ -14,7 +14,7 @@ COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 RUN apk update && apk add bash
 
 #RUN ["/bin/bash", "-c", "echo listener $PORT >> /mosquitto/config/mosquitto.conf"]
-RUN /bin/bash echo listener $PORT >> /mosquitto/config/mosquitto.conf
+RUN /bin/bash -c echo listener $PORT >> /mosquitto/config/mosquitto.conf
 
 #CMD echo listener $PORT
 #COPY mosquitto.conf /mosquitto/config/mosquitto.conf 
