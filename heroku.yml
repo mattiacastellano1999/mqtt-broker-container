@@ -1,8 +1,6 @@
 build:
   docker:
     web: Dockerfile
-    ports:
-      - $PORT:$PORT
     #mosquitto:
       #container_name: mosquitto
       #image: eclipse-mosquitto:1.6.13
