@@ -1,4 +1,5 @@
-FROM eclipse-mosquitto:1.6.13
+FROM eclipse-mosquitto:1.6.13 
+
 COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 #CMD [ "sh", "-c", "echo $PORT" ]
 
@@ -8,7 +9,9 @@ COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
 #CMD echo listener $PORT >> /mosquitto/config/mosquitto.conf
 
-CMD ["echo listener $PORT >> /mosquitto/config/mosquitto.conf"]
+#CMD ["echo listener $PORT >> /mosquitto/config/mosquitto.conf"]
+
+RUN ["/bin/bash", "-c", "echo listener $PORT >> /mosquitto/config/mosquitto.conf"]
 
 #CMD echo listener $PORT
 #COPY mosquitto.conf /mosquitto/config/mosquitto.conf 
