@@ -9,12 +9,12 @@ COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
 #ENTRYPOINT ["echo listener $PORT >> /mosquitto/config/mosquitto.conf"]
 
-CMD echo listener $PORT >> /mosquitto/config/mosquitto.conf
+#CMD echo listener $PORT >> /mosquitto/config/mosquitto.conf
 
-#CMD ["echo listener $PORT >> /mosquitto/config/mosquitto.conf"]
+CMD ["echo listener $PORT >> /mosquitto/config/mosquitto.conf"]
 
 RUN cat /mosquitto/config/mosquitto.conf
-RUN sudo service mosquitto start
+RUN service mosquitto start
 
 
 #ENTRYPOINT ["sh", "-c", "echo $PORT"]
