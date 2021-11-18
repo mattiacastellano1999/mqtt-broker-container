@@ -14,7 +14,7 @@ CMD echo listener $PORT >> /mosquitto/config/mosquitto.conf
 #CMD ["echo listener $PORT >> /mosquitto/config/mosquitto.conf"]
 
 RUN cat /mosquitto/config/mosquitto.conf
-RUN run -it -p 1883:1883 -p 9001:9001 eclipse-mosquitto:1.6.13
+RUN sudo service mosquitto start
 
 
 #ENTRYPOINT ["sh", "-c", "echo $PORT"]
